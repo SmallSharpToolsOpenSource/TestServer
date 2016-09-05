@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestServer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uo5-LV-jCW">
+                                <rect key="frame" x="256.5" y="285" width="87" height="30"/>
+                                <state key="normal" title="Run Request"/>
+                                <connections>
+                                    <action selector="runRequestButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yC2-rZ-j4t"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zuc-RU-WEF">
+                                <rect key="frame" x="275.5" y="323" width="49.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uo5-LV-jCW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7sG-OD-i1M"/>
+                            <constraint firstItem="uo5-LV-jCW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FYc-US-405"/>
+                            <constraint firstItem="zuc-RU-WEF" firstAttribute="centerX" secondItem="uo5-LV-jCW" secondAttribute="centerX" id="Jp4-AG-Lgl"/>
+                            <constraint firstItem="zuc-RU-WEF" firstAttribute="top" secondItem="uo5-LV-jCW" secondAttribute="bottom" constant="8" id="o08-RJ-BTH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="runRequestButton" destination="uo5-LV-jCW" id="m8l-RD-sHq"/>
+                        <outlet property="statusLabel" destination="zuc-RU-WEF" id="9n6-Ct-TCH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

@@ -34,14 +34,16 @@ class ServerTests: XCTestCase {
 
         requestor.request(.GET, baseURL: "http://localhost:8081", path: "/hello", params: nil) { (response, error) in
             dispatch_async(dispatch_get_main_queue()) {
-                if let response = response {
-                    debugPrint("Response: \(response)")
-                    XCTAssertTrue(true, "Success")
+                XCTAssertNil(error, "Error must be nil")
+
+                guard let response = response,
+                    html = response as? String else {
+                    XCTFail("An HTML string is expected")
+                        return
                 }
-                else if let error = error {
-                    debugPrint("Error: \(error.localizedDescription)")
-                    XCTFail("Error: \(error.localizedDescription)")
-                }
+
+                let range = html.rangeOfString("Hello")
+                XCTAssertNotNil(range, "Range must be defined")
 
                 expectation.fulfill()
             }
@@ -61,12 +63,12 @@ class ServerTests: XCTestCase {
                 guard let response = response,
                     let json = response as? JSONDictionary else {
                     XCTFail("Invalid response")
-                        return
+                    return
                 }
 
                 debugPrint("JSON: \(json)")
                 let data = json["data"] as? String
-                XCTAssertTrue(data == "123", "Expects 123")
+                XCTAssertTrue(data == "123", "123 is expected")
 
                 expectation.fulfill()
             }

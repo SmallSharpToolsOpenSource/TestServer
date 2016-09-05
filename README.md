@@ -4,9 +4,9 @@
 
 An experiment to test server interactions using a local test HTTP server using the [Swifter](https://github.com/httpswift/swifter) library.
 
-Making a library which is an API client more testable with unit tests means not making calls to the actual server which would be an integration test. Not actually making real calls to a server means critical parts of the code based are not tested and code coverage is as not as high as it could be.
+A collection of unit tests should not use any external resources, so calls to a real API are not allowed. Such tests would be integration tests and are generally slower and harder to ensure correctness as the state is often changed with each test run without a guarantee that the state is fully reset. By not making real API calls critical parts of the code based are not tested and code coverage is as not as high as it could be.
 
-In this experimental project the Swifter library is used to start an HTTP server from within the test environment and use the same code which would normally make remote API calls. The HTTP server is started and runs on localhost on port 8081. Then there are 2 sample requests. One fetches an HTML path and another fetches JSON data.
+In this experimental project the Swifter library is used to start an HTTP server from within the test environment and use the same code which would normally make remote API calls. The HTTP server is started and runs on localhost on port 8081. Then there are 2 sample requests. One fetches an HTML path and another fetches JSON data. For each test run the state does not change so it does not have to be reset, like a real database would. The tests also run faster as there is no latency caused by a remote API call.  
 
 ## How It Works
 

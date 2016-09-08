@@ -39,7 +39,6 @@
 		26F99A531D7CC18600F76C84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26F99A581D7CC18600F76C84 /* TestServerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestServerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26F99A5E1D7CC18600F76C84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		26F99A781D7CC2E100F76C84 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		26F99A7D1D7CC4DB00F76C84 /* ServerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerTests.swift; sourceTree = "<group>"; };
 		26F99A7F1D7CC4F600F76C84 /* WebServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServer.swift; sourceTree = "<group>"; };
 		26F99A811D7CC6A300F76C84 /* Requestor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Requestor.swift; sourceTree = "<group>"; };
@@ -91,7 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				26F99A461D7CC18600F76C84 /* TestServer */,
-				26F99A771D7CC2E100F76C84 /* SwiftServer */,
 				26F99A5B1D7CC18600F76C84 /* TestServerTests */,
 				26F99A451D7CC18600F76C84 /* Products */,
 				230C197E2E0CE37FCBC73823 /* Pods */,
@@ -130,14 +128,6 @@
 				26F99A7F1D7CC4F600F76C84 /* WebServer.swift */,
 			);
 			path = TestServerTests;
-			sourceTree = "<group>";
-		};
-		26F99A771D7CC2E100F76C84 /* SwiftServer */ = {
-			isa = PBXGroup;
-			children = (
-				26F99A781D7CC2E100F76C84 /* main.swift */,
-			);
-			path = SwiftServer;
 			sourceTree = "<group>";
 		};
 		276483E34E008E58B37A4485 /* Frameworks */ = {
@@ -201,14 +191,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "SmallSharpTools LLC";
 				TargetAttributes = {
 					26F99A431D7CC18600F76C84 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = M3FCT79SM9;
+						LastSwiftMigration = 0800;
 					};
 					26F99A571D7CC18600F76C84 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = M3FCT79SM9;
+						LastSwiftMigration = 0800;
 						TestTargetID = 26F99A431D7CC18600F76C84;
 					};
 				};
@@ -409,8 +403,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -455,8 +451,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -475,6 +473,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -485,10 +484,12 @@
 			baseConfigurationReference = 8D473381FA51B634898BB49C /* Pods-TestServer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M3FCT79SM9;
 				INFOPLIST_FILE = TestServer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smallsharptools.TestServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -497,10 +498,12 @@
 			baseConfigurationReference = DD4E16F815A9DA8A11E74663 /* Pods-TestServer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M3FCT79SM9;
 				INFOPLIST_FILE = TestServer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smallsharptools.TestServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -508,11 +511,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 842798BA1D8E6D76E41D64A8 /* Pods-TestServerTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = M3FCT79SM9;
 				INFOPLIST_FILE = TestServerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smallsharptools.TestServerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestServer.app/TestServer";
 			};
 			name = Debug;
@@ -521,11 +527,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 358322141D1E9EFA793E9891 /* Pods-TestServerTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = M3FCT79SM9;
 				INFOPLIST_FILE = TestServerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smallsharptools.TestServerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestServer.app/TestServer";
 			};
 			name = Release;

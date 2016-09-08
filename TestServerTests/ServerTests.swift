@@ -37,7 +37,7 @@ class ServerTests: XCTestCase {
                 XCTAssertNil(error, "Error must be nil")
 
                 guard let response = response,
-                    html = response as? String else {
+                    let html = response as? String else {
                     XCTFail("An HTML string is expected")
                         return
                 }
